@@ -543,12 +543,12 @@ function defaultFolders() {
         ["inherent", "tabiiy, ajralmas xususiyat"], ["inhibit", "to'xtatib qolmoq, bostirmoq"],
         ["initial", "boshlang'ich, birinchi"], ["initiate", "boshlamoq, yo'l ochmoq"],
         ["inject", "ukol qilmoq, kiritmoq"], ["injure", "jarohatlamoq, zarar yetkazmoq"],
-        ["innovate", "yangi g'oya kiritmoq, yangilik yaratmoq"], ["input", "kiritilgan ma'lumot, ulush"], ["inquire", "surishtirmoq, so'ramoq"], ["insight", "idrok, chuqur tushunish, ichki ko'rinish"], ["insignificant", "ahamiyatsiz, arzimas"], ["insist", "qat'iy talab qilmoq, oyoq tirab olmoq"], ["inspect", "tekshirmoq, ko'zdan kechirmoq"], ["inspire", "ruhlandirmoq, ilhomlantirmoq"], ["install", "o'rnatmoq, joylashtirmoq"], ["instance", "misol, namuna, holat"], ["instant", "lahzalik, tezkor"], ["instigate", "gijgijlamoq, qo'zg'atmoq (yomonlikka)"], ["institute", "institut, tashkil etmoq"], ["instruct", "yo'l-yo'riq ko'rsatmoq, o'rgatmoq"], ["instrument", "asbob, cholg'u asbobi"], ["insufficient", "yetarsiz"], ["insult", "haqorat qilmoq, haqorat"], ["intact", "shikastlanmagan, butun"], ["integral", "ajralmas, muhim qism"], ["integrate", "birlashtirmoq, integratsiya qilmoq"], ["integrity", "halollik, butunlik, vijdonlilik"], ["intellectual", "intellektual, aqlli"], ["intense", "kuchli, jiddiy, shiddatli"], ["intent", "niyat, maqsad"], ["interact", "o'zaro muloqot qilmoq"], ["interfere", "aralashmoq, xalaqit bermoq"], ["interior", "ichki qism, interyer"], ["intermediate", "o'rta, oraliq"], ["internal", "ichki, ichki dunyo"], ["interpret", "tarjima qilmoq, tushuntirmoq"], ["interrupt", "gapni bo'lmoq, to'xtatmoq"], ["interval", "oraliq vaqt, tanaffus"], ["intervene", "aralashmoq (nizoga), o'rtaga tushmoq"], ["intimate", "yaqin, shaxsiy, qadrdon"], ["intimidate", "qo'rqitmoq, vahimaga solmoq"], ["intricate", "chalkash, murakkab"], ["intrigue", "qiziqishini uyg'otmoq, fitna"], ["intrinsic", "haqiqiy, ichki, ajralmas"], ["introduce", "tanishtirmoq, joriy qilmoq"], ["intrude", "bexosdan bostirib kirmoq"], ["intuition", "ichki sezgi, intuitsiya"], ["invade", "bostirib kirmoq, bosib olmoq"], ["invalidate", "haqiqiy emas deb topmoq, bekor qilmoq"], ["invaluable", "bebaholik, juda qimmatli"], ["invariably", "har doim, o'zgarmasdan"], ["invent", "ixtiro qilmoq"], ["invest", "investitsiya kiritmoq, sarmoya kiritmoq"], ["investigate", "tadqiq qilmoq, jinoiy qidirmoq"], ["invisible", "ko'rinmas"], ["invoke", "yordam so'ramoq, qonunni qo'llamoq"], ["involve", "jalb qilmoq, o'z ichiga olmoq"], ["irony", "piching, istehzo, kinoya"], ["irrational", "mantiqsiz, aqlga sig'maydigan"], ["irrelevant", "aloqasi yo'q, daxlsiz"], ["irreversible", "ortga qaytarib bo'lmaydigan"],
+        ["innovate", "yangi g'oya kiritmoq, yangilik yaratmoq"], ["input", "kiritilgan ma'lumot, ulush"], ["inquire", "surishtirmoq, so'ramoq"], ["insight", "idrok, chuqur tushunish, ichki ko'rinish"], ["insignificant", "ahamiyatsiz, arzimas"], ["insist", "qat'iy talab qilmoq, oyoq tirab olmoq"], ["inspect", "tekshirmoq, ko'zdan kechirmoq"], ["inspire", "ruhlandirmoq, ilhomlantirmoq"], ["install", "o'rnatmoq, joylashtirmoq"], ["instance", "misol, namuna, holat"], ["instant", "lahzalik, tezkor"], ["instigate", "gijgijlamoq, qo'zg'atmoq (yomonlikka)"], ["institute", "institut, tashkil etmoq"], ["instruct", "yo'l-yo'riq ko'rsatmoq, o'rgatmoq"], ["instrument", "asbob, cholg'u asbobi"], ["insufficient", "yetarsiz"], ["insult", "haqorat qilmoq, haqorat"], ["intact", "shikastlanmagan, butun"], ["integral", "ajralmas, muhim qism"], ["integrate", "birlashtirmoq, integratsiya qilmoq"], ["integrity", "halollik, butunlik, vijdonlilik"], ["intellectual", "intellektual, aqlli"], ["intense", "kuchli, jiddiy, shiddatli"], ["intent", "niyat, maqsad"], ["interact", "o'zaro muloqot qilmoq"], ["interfere", "aralashmoq, xalaqit bermoq"], ["interior", "ichki qism, interyer"], ["intermediate", "o'rta, oraliq"], ["internal", "ichki, ichki dunyo"], ["interpret", "tarjima qilmoq, tushuntirmoq"], ["interrupt", "gapni bo'lmoq, to'xtatmoq"], ["interval", "oraliq vaqt, tanaffus"], ["interveme", "aralashmoq (nizoga), o'rtaga tushmoq"], ["intimate", "yaqin, shaxsiy, qadrdon"], ["intimidate", "qo'rqitmoq, vahimaga solmoq"], ["intricate", "chalkash, murakkab"], ["intrigue", "qiziqishini uyg'otmoq, fitna"], ["intrinsic", "haqiqiy, ichki, ajralmas"], ["introduce", "tanishtirmoq, joriy qilmoq"], ["intrude", "bexosdan bostirib kirmoq"], ["intuition", "ichki sezgi, intuitsiya"], ["invade", "bostirib kirmoq, bosib olmoq"], ["invalidate", "haqiqiy emas deb topmoq, bekor qilmoq"], ["invaluable", "bebaholik, juda qimmatli"], ["invariably", "har doim, o'zgarmasdan"], ["invent", "ixtiro qilmoq"], ["invest", "investitsiya kiritmoq, sarmoya kiritmoq"], ["investigate", "tadqiq qilmoq, jinoiy qidirmoq"], ["invisible", "ko'rinmas"], ["invoke", "yordam so'ramoq, qonunni qo'llamoq"], ["involve", "jalb qilmoq, o'z ichiga olmoq"], ["irony", "piching, istehzo, kinoya"], ["irrational", "mantiqsiz, aqlga sig'maydigan"], ["irrelevant", "aloqasi yo'q, daxlsiz"], ["irreversible", "ortga qaytarib bo'lmaydigan"],
         ["irrigate", "sug'ormoq"], ["irritate", "g'ashini keltirmoq, asbiylashtirmoq"], ["isolate", "ajratmoq, yakkalab qo'ymoq"], ["issue", "muammo, nashr, chiqarmoq"], ["item", "buyum, narsa, punkt"], ["jeopardy", "xavf-xatar ostida qolish"],
         ["jolly", "shod, quvnoq"], ["journal", "jurnal, kundalik"],
         ["judgment", "hukm, adolatli qaror, baho"], ["judicial", "sudga oid, sud huquqiy"], ["judicious", "oqilona, mulohazali"],
         ["junction", "chorraha, uchrashish joyi"], ["justify", "oqlamoq, asoslab bermoq"],
-        ["juvenile", "voyaga yetmagan, yoshlar"], ["keen", "tirshqoq, aqlli, o'tkir"],
+        ["juvenile", "voyaga yetgan, yoshlar"], ["keen", "tirshqoq, aqlli, o'tkir"],
         ["kidnap", "odam o'g'irlash"], ["kinship", "qarindoshlik, yaqinlik"], ["knack", "mahorat, uquv, qobiliyat"],
         ["knight", "ritsar, olijanob jangchi"], ["label", "yorliq, etiketka, tamg'a"],
         ["labor", "mehnat, ishchi kuchi"], ["labyrinth", "chalkash yo'lak, labirint"],
@@ -580,7 +580,7 @@ function defaultFolders() {
         ["memorandum", "eslatma xati, memorandum"], ["menace", "tahdid, xavf-xatar"], ["merge", "qo'shilmoq, birlashmoq"], ["metaphor", "metafora, ko'chma ma'no"], ["method", "usul, metod"], ["meticulous", "o'ta e'tiborli, puxta"], ["metropolitan", "metropoliten, yirik shahar"], ["migrate", "ko'chib o'tmoq, migratsiya qilmoq"], ["mild", "yumshoq, mayin, engil"], ["military", "harbiy, armiya"], ["minimal", "eng kam, minimal"], ["minor", "ahamiyatsiz, kichik, voyaga yetmagan"], ["minority", "kamchilik (guruh)"], ["miracle", "mo''jiza"], ["misery", "baxtsizlik, azob-uqubat"], ["misleading", "chalg'ituvchi, noto'g'ri"],
         ["mitigate", "yumshatmoq, kamaytirmoq (zararni)"], ["mode", "usul, rejim, moda"], ["moderate", "mo''tadil, o'rtacha"], ["modify", "o'zgartirmoq, tuzatmoq"], ["momentum", "tezlik, turtki, harakat kuchi"], ["monarch", "monarx, qirol"], ["monitor", "nazorat qilmoq, kuzatmoq"], ["monopoly", "monopoliya, yakkahokimlik"], ["monotonous", "bir xil, zerikarli"], ["monumental", "ulkan, tarixiy ahamiyatli"], ["mood", "kayfiyat"], ["morality", "axloq, odob"], ["morbid", "kasallik holatidagi, mudhish"], ["mortal", "o'limga mahkum, foni"], ["motivate", "ruhlandirmoq, rag'batlantirmoq"], ["motive", "sabab, turtki, maqsad"], ["multitude", "son-sanoqsiz, juda ko'p"], ["mundane", "oddiy, zerikarli, dunyoviy"], ["municipal", "shahar hokimiyatiga oid"], ["mutual", "o'zaro, hamjihatlikdagi"],
         ["myriad", "son-sanoqsiz, juda ko'p sonli"], ["myth", "mif, afsona, uydirma"], ["naive", "soddadil, go'l, ishonuvchan"], ["narrative", "hikoya, bayonot"], ["nascent", "yangi shakllanayotgan, tug'ilayotgan"], ["nation", "millat, xalq, davlat"], ["native", "mahalliy, tug'ma"], ["natural", "tabiiy, oddiy"], ["nausea", "ko'ngil aynishi"], ["navigate", "yo'nalishni aniqlamoq, boshqarmoq"], ["nebulous", "noaniq, xira, tumanli"], ["necessitate", "taqozo etmoq, majburlamoq"], ["needle", "igna"], ["negative", "salbiy, inkor"], ["neglect", "e'tiborsiz qoldirmoq, qaramaslik"], ["negligible", "arzimas, hisobga olmasa ham bo'ladigan"], ["negotiate", "muzokara olib bormoq"], ["neighborhood", "mahalla, atrof-muhit"], ["nervous", "asbiy, hayajonlangan"], ["neutral", "xolis, betaraf"], ["nevertheless", "shunday bo'lsa-da, baribir"], ["niche", "mos joy, uya, maxsus soha"], ["nimble", "chaqqon, epchil"], ["noble", "olijanob, oliyjanob"], ["nocturnal", "tungi, tunda faol bo'ladigan"], ["nominal", "nomigagina, juda kam"], ["norm", "me'yor, qoida, norma"], ["notable", "e'tiborga loyiq, taniqli"], ["notion", "tushuncha, fikr, qarash"], ["notorious", "yomon oti chiqqan, badnom"], ["novel", "roman, yangi, o'zgacha"], ["novice", "yangi boshlovchi, o'rganuvchi"], ["noxious", "zararli, zaharli"],
-        ["nuance", "nozik farq, nozik jihat"], ["nucleus", "yadro, markaz, asos"], ["nullify", "kuchdan qoldirmoq, bekor qilmoq"], ["numerous", "ko'plab, son-sanoqsiz"], ["nurture", "tarbiyalamoq, parvarish qilmoq"], ["nutrient", "to'yimli modda, ozuqa"], ["oasis", "voha, oazis"], ["obey", "bo'ysunmoq, itoat qilmoq"], ["objective", "maqsad, xolis qarash"], ["obligation", "majburiyat, burch"], ["obliterate", "yo'q qilmoq, o'chirib tashlamoq"], ["oblivious", "befarq, unutgan, e'tiborsiz"], ["obnoxious", "jirkanch, yoqimsiz"], ["obscure", "noaniq, yashirin, tushunarsiz"], ["obsequent", "bo'ysunuvchan"], ["observable", "kuzatsa bo'ladigan"], ["observant", "kuzatuvchan, ziyorak"], ["obsolete", "eskirgan, iste'moldan chiqqan"], ["obstacle", "to'siq, g'ov, qiyinchilik"], ["obstinate", "o'jar, qaysar"], ["obtain", "qo'lga kiritmoq, olmoq"], ["obvious", "aniq, ravshan"], ["occasion", "sharoit, voqea, imkoniyat"], ["occupation", "kasb, mashg'ulot, okkupatsiya"], ["occupy", "egallamoq, band qilmoq"], ["occur", "sodir bo'moq, yuz bermoq"], ["odd", "g'alati, toq (son)"], ["odious", "jirkanch, nafratli"], ["odor", "hid, is"], ["offend", "xafa qilmoq, qonun buzmoq"], ["offensive", "haqoratomuz, hujumkor"], ["official", "rasmiy"], ["offset", "qoplamoq, muvozanatlashtirmoq"], ["omission", "tushirib qoldirish, xato"], ["omit", "tushirib qoldirmoq"], ["omnipotent", "hamma narsaga qodir"], ["onerous", "og'ir, mashaqqatli"], ["ongoing", "davom etayotgan"], 
+        ["nuance", "nozik farq, nozik jihat"], ["nucleus", "yadro, markaz, asos"], ["nullify", "kuchdan qoldirmoq, bekor qilmoq"], ["numerous", "ko'plab, son-sanoqsiz"], ["nurture", "tarbiyalamoq, parvarish qilmoq"], ["nutrient", "to'yimli modda, ozuqa"], ["oasis", "voha, oazis"], ["obey", "bo'ysunmoq, itoat qilmoq"], ["objective", "maqsad, xolis qarash"], ["obligation", "majburiyat, burch"], ["obliterate", "yo'q qilmoq, o'chirib tashlamoq"], ["oblivious", "befarq, unutgan, e'tiborsiz"], ["obnoxious", "jirkanch, yoqimsiz"], ["obscure", "noaniq, yashirin, tushunarsiz"], ["obsequent", "bo'ysunuvchan"], ["observable", "kuzatsa bo'ladigan"], ["observant", "kuzatuvchan, ziyorak"], ["obsolete", "eskirgan, iste'moldan chiqqan"], ["obstacle", "to'siq, g'ov, qiyinchilik"], ["obstinate", "o'jar, qaysar"], ["obtain", "qo'lga kiritmoq, olmoq"], ["obvious", "aniq, ravshan"], ["occasion", "sharoit, voqea, imkoniyat"], ["occupation", "kasb, mashg'ulot, okkupatsiya"], ["occupy", "egallamoq, band qilmoq"], ["occur", "sodir bo'moq, yuz bermoq"], ["odd", "g'alati, toq (son)"], ["odious", "jirkanch, nafratli"], ["odor", "hid, is"], ["offend", "xafa qilmoq, qonun buzmoq"], ["offensive", "haqoratomuz, hujumkor"], ["official", "rasmiy"], ["offset", "qoplamoq, muvozanatlashtirmoq"], ["omission", "tushirib qoldirish, xato"], ["omit", "tushirib qoldirmoq"], ["omnipotent", "hamma narsaga qodir"], ["onerous", "og'ir, mashaqqatli"], ["ongoing", "davom etayotgan"],
         ["opaque", "xira, yorug'lik o'tkazmaydigan"], ["opinion", "fikr, mulohaza"], ["opponent", "raqib, qarshi tomon"], ["opportunity", "imkoniyat, qulay sharoit"], ["oppose", "qarshi chiqmoq"], ["opposite", "teskari, qarama-qarshi"], ["oppress", "ezmoq, zulm qilmoq"], ["opt", "tanlamoq, qaror qilmoq"], ["optimal", "eng ma'qul, eng yaxshi"], ["optimism", "optimizm, yaxshi umid qilish"], ["option", "tanlov, variant"], ["opulent", "boy, dabdabali"], ["oral", "og'zaki"], ["orbit", "orbita, yo'l, aylanmoq"], ["ordeal", "og'ir sinov, azob"], ["order", "tartib, buyruq, buyurtma"], ["ordinary", "oddiy, odatdagi"], ["organ", "organ, a'zo"], ["organic", "organik, tabiiy"], ["organize", "tashkil qilmoq, rejalashtirmoq"], ["orient", "yo'naltirmoq, moslashtirmoq"], ["origin", "kelib chiqish, asos"], ["original", "asl, birinchi, original"], ["ornament", "bezak, naqsh"], ["orthodox", "an'anaviy, pravoslav, qat'iy"], ["ostentatious", "ko'z-ko'z qiladigan, dabdabali"], ["outcome", "natija, yakun"], ["outdo", "ortda qoldirmoq, yaxshiroq bajarmoq"], ["outfit", "kiyim-bosh, jihozlar to'plami"], ["outlaw", "qonundan tashqari deb e'lon qilmoq"], ["outlet", "chiqish yo'li, savdo shoxobchasi"], ["outline", "reja, qisqacha bayon, chizg'i"],
         ["outlook", "dunyoqarash, istiqbol, qarash"], ["output", "mahsulot hajmi, unumdorlik"],
         ["outrage", "g'azab, daxshatli jinoyat"], ["outrageous", "bema'ni, daxshatli"],
@@ -598,7 +598,7 @@ function defaultFolders() {
         ["participate", "ishtirok etmoq"], ["particle", "zarracha, qismacha"],
         ["particular", "maxsus, alohida, aniq"], ["partisan", "tarafkash, partizan"],
         ["partition", "bo'lish, to'siq, devor"], ["partner", "sherik, hamkor"],
-        ["passion", "ehtiros, kuchli qiziqish"], ["passive", "sust, passiv"], ["pastime", "vaqtichog'lik, ermak"], ["pasture", "yaylov, o'tloq"], ["patent", "patent, ochiq-oydin"], ["path", "yo'lak, yo'l"], ["pathetic", "achinarli, g'arib"], ["patience", "sabr, chidam"], ["patriot", "vatanparvar"], ["patron", "homiy, doimiy mijoz"], ["pattern", "andoza, namuna, qonuniyat"], ["paucity", "kamchilik, yetishmovchilik"], ["pause", "to'xtash, tanaffus"], ["peak", "cho'qqi, eng yuqori nuqta"], ["peculiar", "o'ziga xos, g'alati"], ["pecuniary", "pulga oid, moliyaviy"], ["pedestrian", "piyoda, zerikarli"], ["peer", "tengdosh, hamkasb, diqqat bilan qaramoq"], ["penalize", "jazolamoq"], ["penalty", "jazo, jarima"], ["penetrate", "ichkariga kirmoq, teshib o'tmoq"], ["pensive", "o'ychan, ma'yus"], ["perceive", "anglamoq, his qilmoq"], ["percent", "foiz"], ["perception", "idrok, qarash, tushuncha"], ["perennial", "ko'p yillik, doimiy"], ["perfect", "mukammal, a'lo"], ["perform", "ijro etmoq, bajarmoq"], ["perfume", "atir, xushboy hid"], ["peril", "xavf-xatar, xavf"], ["period", "davr, muddat, nuqta"], ["perish", "halok bo'lmoq, yo'q bo'lmoq"], ["permanent", "doimiy, o'zgarmas"], ["permeate", "singmoq, tarqalmoq"], ["permissible", "ruxsat etilgan, joiz"], ["permit", "ruxsat bermoq, ruxsatnoma"], ["perpendicular", "tik, perpendikulyar"], ["perpetual", "umrbod, abadiy, tinimsiz"], ["perplex", "chalkashtirmoq, hayron qoldirmoq"], ["persecute", "ta'qib qilmoq, azoblamoq"], ["persevere", "qat'iyat ko'rsatmoq, taslim bo'lmaslik"], 
+        ["passion", "ehtiros, kuchli qiziqish"], ["passive", "sust, passiv"], ["pastime", "vaqtichog'lik, ermak"], ["pasture", "yaylov, o'tloq"], ["patent", "patent, ochiq-oydin"], ["path", "yo'lak, yo'l"], ["pathetic", "achinarli, g'arib"], ["patience", "sabr, chidam"], ["patriot", "vatanparvar"], ["patron", "homiy, doimiy mijoz"], ["pattern", "andoza, namuna, qonuniyat"], ["paucity", "kamchilik, yetishmovchilik"], ["pause", "to'tokish, tanaffus"], ["peak", "cho'qqi, eng yuqori nuqta"], ["peculiar", "o'ziga xos, g'alati"], ["pecuniary", "pulga oid, moliyaviy"], ["pedestrian", "piyoda, zerikarli"], ["peer", "tengdosh, hamkasb, diqqat bilan qaramoq"], ["penalize", "jazolamoq"], ["penalty", "jazo, jarima"], ["penetrate", "ichkariga kirmoq, teshib o'tmoq"], ["pensive", "o'ychan, ma'yus"], ["perceive", "anglamoq, his qilmoq"], ["percent", "foiz"], ["perception", "idrok, qarash, tushuncha"], ["perennial", "ko'p yillik, doimiy"], ["perfect", "mukammal, a'lo"], ["perform", "ijro etmoq, bajarmoq"], ["perfume", "atir, xushboy hid"], ["peril", "xavf-xatar, xavf"], ["period", "davr, muddat, nuqta"], ["perish", "halok bo'lmoq, yo'q bo'lmoq"], ["permanent", "doimiy, o'zgarmas"], ["permeate", "singmoq, tarqalmoq"], ["permissible", "ruxsat etilgan, joiz"], ["permit", "ruxsat bermoq, ruxsatnoma"], ["perpendicular", "tik, perpendikulyar"], ["perpetual", "umrbod, abadiy, tinimsiz"], ["perplex", "chalkashtirmoq, hayron qoldirmoq"], ["persecute", "ta'qib qilmoq, azoblamoq"], ["persevere", "qat'iyat ko'rsatmoq, taslim bo'lmaslik"],
         ["persist", "tirashib olmoq, davom etmoq"], ["perspective", "nuqtai nazar, istiqbol"], ["persuade", "ko'ndirmoq, ishontirmoq"], ["pertain", "daxldor bo'lmoq, tegishli bo'lmoq"], ["pertinent", "aloqador, mos keladigan"], ["pervade", "qamrab olmoq, tarqalmoq"], ["perverse", "qaysar, teskari, yomon"], ["pessimism", "pessimizm, tushkunlik"], ["petition", "arzi, ariza, iltimosnoma"], ["petty", "arzimas, mayda-chuyda"], ["phase", "bosqich, faza"], ["phenomenon", "hodisa, fenomen"], ["philanthropy", "sahiylik, xayriya ishlari"], ["philosophy", "falsafa"], ["physical", "jismoniy, moddiy"], ["pinnacle", "cho'qqi, yuqori nuqta"], ["pioneer", "kashfiyotchi, yo'l boshlovchi"], ["pious", "taqvodor, dindor"], ["pitfall", "yashirin xavf, tuzoq"], ["pity", "achinish, shafqat"], ["pivot", "o'q, asosiy nuqta"], ["placate", "tinchlantirmoq, ko'nglini ovlamoq"], ["placebo", "platsebo (shakar dori)"], ["placid", "osoyishta, xotirjam"], ["plagiarism", "ko'chirmachilik, plagiat"], ["plague", "o'lat, vabo, azoblamoq"], ["plain", "oddiy, tekislik, yaqqol"], ["plaintiff", "da'vogar (sudda)"], ["planet", "sayyora, planeta"], ["plastic", "plastmassa, qayishqoq"], ["plateau", "yassi tog'lik, plato, turg'unlik bosqichi"], ["plausible", "haqiqatga yaqin, ishonarli"], ["plea", "iltimos, o'tinch, vaj"], ["plead", "o'tinib so'ramoq, sudda gapirmoq"], ["pledge", "va'da bermoq, qasamyod"], ["plenary", "yalpi, to'la va'da qilingan"], ["plentiful", "mo'l-ko'l, serob"], ["plight", "og'ir ahvol, mushkul vaziyat"], ["plot", "fitna, syujet, yer maydoni"], ["plummet", "shiddat bilan pastga qulamoq"], ["plunge", "sho'ng'imoq, keskin tushmoq"], ["plural", "ko'plik (son)"], ["poignant", "ta'sirli, achchiq, alamli"], ["poison", "zahar, zaharlamoq"], ["pole", "qutb, ustun"], ["policy", "siyosat, strategiya, polis"], ["polish", "yaltiratmoq, silliqlamoq"], ["polite", "xushmuomala, odobli"], ["political", "siyosiy"], ["poll", "so'rovnoma, ovoz berish"], ["pollute", "bulg'amoq, zararlantirmoq"], ["pompous", "manman, dabdabali, dabdaba"], ["ponder", "chuqur o'ylamoq, mushohada qilmoq"],
         ["popular", "ommabop, mashhur"], ["population", "aholi, xalq soni"], ["portable", "ko'chma, olib yurishga oson"], ["portion", "qism, ulush, porsiya"], ["portray", "tasvirlamoq, ifodalamoq"], ["pose", "muammo tug'dirmoq, poza berish"], ["position", "lavozim, pozitsiya, joylashuv"], ["positive", "ijobiy, aniq"], ["possess", "egalik qilmoq, bor bo'lmoq"], ["possible", "imkoniy, ehtimoliy"], ["postpone", "keyinga qoldirmoq"], ["posture", "qomat, holat, pozitsiya"], ["potent", "kuchli, ta'sirchan"], ["potential", "salohiyat, potentsial"], ["poverty", "kambag'allik, qashshoqlik"], ["practicable", "bajarib bo'ladigan, qulay"], ["practical", "amaliy"], ["praise", "maqtamoq, olqish"], ["precarious", "xavfli, beqaror, omonat"], ["precaution", "ehtiyot chorasi"], ["precede", "undan oldin kelmoq"], ["precedent", "pretsedent, o'tmishdagi namuna"], ["precious", "qimmatbaho, aziz"], ["precise", "aniq, lo'nda"], ["preclude", "oldini olmoq, imkon bermaslik"], ["precursor", "darakchi, poydevor, o'tmishdosh"], ["predator", "yirtqich hayvon"], ["predecessor", "ajdod, o'rindosh, o'tmishdosh"], ["predict", "bashorat qilmoq"], ["predominant", "ustunlik qiluvchi"], ["eminent", "taniqli, mashhur"], ["paramount", "eng yuqori darajadagi muhim"], ["scrutiny", "puxta tekshirish, sinov"], ["ubiquitous", "hamma yerda hoziru nozir"], ["volatile", "o'zgaruvchan, beqaror"]
     ];
@@ -1038,72 +1038,69 @@ function nextQuestion() {
 
     currentQuestionWord = selected;
 
-    let dir = 'en-uz';
-    for (const r of radioDir) if (r.checked) { dir = r.value; break; }
-    if (dir === 'random') dir = Math.random() < 0.5 ? 'en-uz' : 'uz-en';
+    let dir = 'en';
+    for (const r of radioDir) { if (r.checked) dir = r.value; }
 
+    if (dir === 'mixed') { dir = Math.random() < 0.5 ? 'en' : 'uz'; }
+    currentShownLang = dir;
+
+    feedback.className = 'practice-feedback-box hidden';
     transDisplay.classList.add('hidden');
-    transDisplay.querySelector('span').textContent = '';
+    answerInput.value = '';
+    btnCheck.classList.remove('hidden');
+    btnNext.classList.add('hidden');
 
-    if (dir === 'en-uz') {
-        currentShownLang = 'en';
-        langTag.textContent = 'Inglizcha';
-        wordText.textContent = selected.english;
-        currentCorrectAnswer = selected.uzbek;
+    if (currentShownLang === 'en') {
+        langTag.textContent = 'Inglizcha so\'z:';
+        wordText.textContent = currentQuestionWord.english;
+        currentCorrectAnswer = currentQuestionWord.uzbek;
         btnSpeak.classList.remove('hidden');
     } else {
-        currentShownLang = 'uz';
-        langTag.textContent = "O'zbekcha";
-        wordText.textContent = selected.uzbek;
-        currentCorrectAnswer = selected.english;
+        langTag.textContent = 'O\'zbekcha so\'z:';
+        wordText.textContent = currentQuestionWord.uzbek;
+        currentCorrectAnswer = currentQuestionWord.english;
         btnSpeak.classList.add('hidden');
     }
 
-    answerInput.value = '';
-    answerInput.disabled = false;
-    answerInput.className = '';
-    feedback.className = 'practice-feedback hidden';
-    feedback.innerHTML = '';
-    btnCheck.classList.remove('hidden');
-    btnNext.classList.add('hidden');
-    setTimeout(() => answerInput.focus(), 80);
+    setTimeout(() => answerInput.focus(), 100);
 }
 
 function checkAnswer() {
     if (!currentQuestionWord) return;
-    const user = answerInput.value.trim().toLowerCase();
-    if (!user) { answerInput.focus(); return; }
 
-    const correctList = currentCorrectAnswer.toLowerCase().split(',').map(a => a.trim());
-    const isCorrect = correctList.some(c => user === c);
+    const ans = answerInput.value.trim().toLowerCase();
+    const correctStr = currentCorrectAnswer.toLowerCase();
 
-    currentQuestionWord.weight = isCorrect
-        ? Math.max(1, (currentQuestionWord.weight || 1) - 1)
-        : (currentQuestionWord.weight || 1) + 3;
-    currentQuestionWord.totalAttempts = (currentQuestionWord.totalAttempts || 0) + 1;
-    if (isCorrect) { currentQuestionWord.correctAttempts = (currentQuestionWord.correctAttempts || 0) + 1; sessionCorrect++; }
+    // Ko'p variantli tarjimalarni ham tekshirish (vergul bilan ajratilgan bo'lsa)
+    const options = correctStr.split(',').map(x => x.trim());
+    const isCorrect = options.includes(ans) || ans === correctStr;
+
     sessionTotal++;
+    currentQuestionWord.totalAttempts = (currentQuestionWord.totalAttempts || 0) + 1;
+
+    if (isCorrect) {
+        sessionCorrect++;
+        currentQuestionWord.correctAttempts = (currentQuestionWord.correctAttempts || 0) + 1;
+        if (currentQuestionWord.weight > 1) currentQuestionWord.weight--;
+
+        feedback.textContent = "To'g'ri! Barakalla! 🎉";
+        feedback.className = 'practice-feedback-box correct';
+    } else {
+        currentQuestionWord.weight = (currentQuestionWord.weight || 1) + 2;
+
+        feedback.textContent = `Noto'g'ri. To'g'ri javob: ${currentCorrectAnswer}`;
+        feedback.className = 'practice-feedback-box incorrect';
+    }
+
     saveFolders();
     updateStats();
 
-    transDisplay.querySelector('span').textContent = currentCorrectAnswer;
-    transDisplay.classList.remove('hidden');
-
-    answerInput.disabled = true;
     btnCheck.classList.add('hidden');
     btnNext.classList.remove('hidden');
     btnNext.focus();
 
-    feedback.classList.remove('hidden');
-    if (isCorrect) {
-        answerInput.className = 'success-input';
-        feedback.className = 'practice-feedback success';
-        feedback.innerHTML = `<h5>✓ TO'G'RI!</h5><p>Javobingiz: ${esc(answerInput.value)}</p>`;
-        if (currentShownLang === 'en') speak(currentQuestionWord.english);
-    } else {
-        answerInput.className = 'error-input';
-        feedback.className = 'practice-feedback error';
-        feedback.innerHTML = `<h5>✗ NOTO'G'RI</h5><p>Siz: <s>${esc(answerInput.value)}</s> → To'g'ri: <strong>${esc(currentCorrectAnswer)}</strong></p>`;
+    if (currentShownLang === 'uz') {
+        speak(currentQuestionWord.english);
     }
 }
 
@@ -1113,60 +1110,41 @@ function updateStats() {
 }
 
 /* ============================================================
-   TEXT-TO-SPEECH
+   UTILITIES
    ============================================================ */
+function esc(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function uid(prefix = 'w') {
+    return `${prefix}_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`;
+}
+
+function phonetic(word) {
+    // Oddiy taqlidiy transkripsiya generatori (Faqat vizual ko'rinish uchun)
+    if (!word) return '';
+    return word.toLowerCase()
+        .replace(/apple/g, 'æpl')
+        .replace(/th/g, 'θ')
+        .replace(/ee/g, 'i:')
+        .replace(/oo/g, 'u:')
+        .replace(/c/g, 'k')
+        .replace(/sh/g, 'ʃ')
+        .replace(/tion/g, 'ʃn');
+}
+
 function speak(text) {
     if (!('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
-    const utt = new SpeechSynthesisUtterance(text);
-    utt.lang = 'en-US';
-    const voices = window.speechSynthesis.getVoices();
-    const v = voices.find(v => v.lang.startsWith('en'));
-    if (v) utt.voice = v;
-    window.speechSynthesis.speak(utt);
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
 }
 
-/* ============================================================
-   SIMPLE PHONETIC HINT
-   ============================================================ */
-function phonetic(word) {
-    return word
-        .toLowerCase()
-        .replace(/tion/g, 'shn')
-        .replace(/ph/g, 'f')
-        .replace(/gh/g, '')
-        .replace(/ck/g, 'k')
-        .replace(/ee/g, 'ii')
-        .replace(/oo/g, 'uu')
-        .replace(/ea/g, 'ii')
-        .replace(/ou/g, 'aw')
-        .replace(/th/g, 'ð')
-        .replace(/sh/g, 'ʃ')
-        .replace(/ch/g, 'tʃ')
-        .replace(/wh/g, 'w')
-        .replace(/ng/g, 'ŋ')
-        .replace(/r/g, 'r')
-        .replace(/e$/, '');
-}
-
-/* ============================================================
-   TOAST FEEDBACK
-   ============================================================ */
 function showToast(msg, type = 'success') {
+    if (!toast) return;
     toast.textContent = msg;
-    toast.className = `toast-feedback ${type} show`;
-    setTimeout(() => toast.classList.remove('show'), 2500);
-}
-
-/* ============================================================
-   HELPERS
-   ============================================================ */
-function esc(str) {
-    return String(str)
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-}
-function uid(prefix = 'id') {
-    return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+    toast.className = `global-toast show ${type}`;
+    setTimeout(() => toast.classList.remove('show'), 3000);
 }
