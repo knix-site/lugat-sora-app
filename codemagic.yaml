@@ -16,7 +16,7 @@ workflows:
 
       - name: Create iOS Platform Folder
         script: |
-          npx cap add ios || true
+          npx cap add ios
 
       - name: Fix permissions
         script: |
