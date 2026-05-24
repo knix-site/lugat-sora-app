@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Lug'at So'ra">
+    <meta name="description" content="Inglizcha-O'zbekcha lug'at va so'rash ilovasi">
+    <title>Lug'at So'ra</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+<div class="app-container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="app-header">
+        <div class="header-logo" id="header-logo-home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <h1>Lug'at<span>So'ra</span></h1>
+        </div>
+        <div class="header-actions">
+            <button id="btn-go-home" class="icon-btn" title="Asosiy sahifa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </button>
+            <button id="theme-toggle" class="icon-btn" title="Mavzuni o'zgartirish">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon sun-icon"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.34-5.66 1.41-1.41M6.34 17.66l-1.41 1.41"></path></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="app-main">
+
+        <!-- 1. FOLDERS LIST -->
+        <section id="view-folders" class="app-view active">
+            <div class="welcome-banner">
+                <h2>Lug'at to'plamlari</h2>
+                <p>Yangi lug'at yarating yoki borlarini tanlang.</p>
+            </div>
+            <button id="btn-open-create-folder" class="primary-btn full-width">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Yangi lug'at yaratish
+            </button>
+            <div class="folders-container">
+                <div id="folders-empty-state" class="empty-state">
+                    <div class="empty-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10M6 10h10"></path></svg>
+                    </div>
+                    <h3>Lug'atlar mavjud emas</h3>
+                    <p>Yangi lug'at to'plami yarating va mashq qilishni boshlang.</p>
+                </div>
+                <div id="folders-list" class="folders-list"></div>
+            </div>
+        </section>
+
+        <!-- 2. CREATE FOLDER -->
+        <section id="view-create-folder" class="app-view">
+            <div class="view-header">
+                <h2>Yangi lug'at yaratish</h2>
+                <p>So'zlarni kiriting, so'ng yakunlang va nom bering.</p>
+            </div>
+            <div class="glass-panel">
+                <div class="input-group">
+                    <label for="create-english">Inglizcha so'z</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="create-english" placeholder="Masalan: Apple" autocomplete="off">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="create-uzbek">O'zbekcha tarjimasi</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="create-uzbek" placeholder="Masalan: Olma" autocomplete="off">
+                    </div>
+                </div>
+                <button type="button" id="btn-create-add-word" class="secondary-btn full-width">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Ro'yxatga qo'shish
+                </button>
+            </div>
+            <div class="session-words-section">
+                <h3>Kiritilgan so'zlar: <span id="create-words-count">0</span> ta</h3>
+                <div id="create-words-list" class="mini-word-list"></div>
+            </div>
+            <div class="create-footer-actions">
+                <button id="btn-finish-create-folder" class="primary-btn full-width">Tugatish (Nom berish)</button>
+                <button id="btn-cancel-create-folder" class="secondary-btn full-width">Asosiy menuga qaytish</button>
+            </div>
+        </section>
+
+        <!-- 3. EDIT FOLDER -->
+        <section id="view-edit-folder" class="app-view">
+            <div class="view-header">
+                <h2 id="edit-folder-title">So'zlar ro'yxati</h2>
+                <p>So'z qo'shish yoki o'chirish.</p>
+            </div>
+            <div class="glass-panel">
+                <div class="input-group">
+                    <label for="edit-add-english">Inglizcha so'z</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="edit-add-english" placeholder="Masalan: Cat" autocomplete="off">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="edit-add-uzbek">O'zbekcha tarjimasi</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="edit-add-uzbek" placeholder="Masalan: Mushuk" autocomplete="off">
+                    </div>
+                </div>
+                <button type="button" id="btn-edit-add-word" class="primary-btn full-width">Qo'shish</button>
+            </div>
+            <div class="dictionary-controls">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="edit-words-search" placeholder="Qidirish...">
+                </div>
+            </div>
+            <div id="edit-words-list" class="word-list"></div>
+            <div class="edit-footer-actions">
+                <button id="btn-back-from-edit" class="secondary-btn full-width">Asosiy menuga qaytish</button>
+            </div>
+        </section>
+
+        <!-- 4. STUDY FOLDER (O'RGANISH) -->
+        <section id="view-study-folder" class="app-view">
+            <div class="view-header">
+                <h2 id="study-folder-title">O'rganish</h2>
+                <p>Tarjimani ko'ring va inglizcha o'qilishini tinglang.</p>
+            </div>
+            <div class="dictionary-controls">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="study-words-search" placeholder="So'z qidirish...">
+                </div>
+            </div>
+            <div id="study-words-list" class="study-words-list"></div>
+            <button id="btn-back-from-study" class="secondary-btn full-width">Asosiy menuga qaytish</button>
+        </section>
+
+        <!-- 5. GLOBAL SEARCH (QIDIRUV) -->
+        <section id="view-search" class="app-view">
+            <div class="view-header">
+                <h2>Qidiruv</h2>
+                <p>Barcha lug'atlardan inglizcha yoki o'zbekcha so'z qidiring.</p>
+            </div>
+            <div class="global-search-box glass-panel">
+                <div class="input-group" style="margin-bottom:0;">
+                    <label for="global-search-input">Inglizcha yoki O'zbekcha so'z kiriting</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="global-search-input" placeholder="Masalan: apple yoki olma..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div id="global-search-results" class="global-search-results">
+                <div class="search-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <p>Qidirish uchun so'z kiriting...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PRACTICE -->
+        <section id="view-practice" class="app-view">
+            <div class="view-header">
+                <h2 id="practice-folder-title">Mashq</h2>
+                <p>So'z boyligingizni sinab ko'ring.</p>
+            </div>
+            <div class="practice-container">
+                <div class="practice-settings glass-panel">
+                    <span class="settings-title">Yo'nalish:</span>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="practice-direction" value="en-uz" checked>
+                            <span class="radio-label">EN ➔ UZ</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="practice-direction" value="uz-en">
+                            <span class="radio-label">UZ ➔ EN</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="practice-direction" value="random">
+                            <span class="radio-label">Tasodifiy</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="question-card" class="question-card">
+                    <div id="practice-translation-display" class="practice-top-translation hidden">
+                        Tarjimasi: <span></span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span id="question-language-tag" class="lang-tag">Inglizcha</span>
+                            <button id="btn-speak-word" class="icon-btn hidden" title="Talaffuz qilish">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                            </button>
+                        </div>
+                        <h3 id="question-word-text">—</h3>
+                    </div>
+                </div>
+
+                <div class="answer-box glass-panel">
+                    <div class="input-group">
+                        <label for="practice-answer-input">Tarjimasini yozing</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="practice-answer-input" placeholder="Javobingiz..." autocomplete="off">
+                        </div>
+                    </div>
+                    <div id="practice-feedback" class="practice-feedback hidden"></div>
+                    <div class="practice-actions">
+                        <button id="btn-check-answer" class="primary-btn full-width">Tekshirish</button>
+                        <button id="btn-next-question" class="primary-btn full-width hidden">Keyingisi →</button>
+                    </div>
+                </div>
+
+                <div class="practice-stats glass-panel">
+                    <div class="session-stat-item">
+                        <span class="lbl">To'g'ri</span>
+                        <span id="session-correct-count" class="val">0</span>
+                    </div>
+                    <div class="session-divider"></div>
+                    <div class="session-stat-item">
+                        <span class="lbl">Jami</span>
+                        <span id="session-total-count" class="val">0</span>
+                    </div>
+                    <div class="session-divider"></div>
+                    <button id="btn-reset-session" class="text-btn">Nolga tushirish</button>
+                </div>
+
+                <button id="btn-stop-practice" class="secondary-btn full-width">Asosiy menuga qaytish</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== BOTTOM NAVIGATION BAR ===== -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" data-view="view-folders" id="nav-folders">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path></svg>
+            <span>Lug'at</span>
+        </button>
+        <button class="nav-btn" data-view="view-search" id="nav-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>Qidiruv</span>
+        </button>
+    </nav>
+
+    <div id="global-feedback" class="toast-feedback hidden"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
