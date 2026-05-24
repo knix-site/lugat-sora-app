@@ -1,18 +1,15 @@
 {
-  "name": "lugat-so'ra-app",
+  "name": "lugat-sora-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Lug'at so'ra mobil ilovasi",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'No build step required'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@capacitor/cli": "^8.3.4",
-    "@capacitor/core": "^8.3.4",
-    "@capacitor/ios": "^8.3.4"
-  }
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/ios": "^5.0.0"
+  },
+  "license": "ISC"
 }

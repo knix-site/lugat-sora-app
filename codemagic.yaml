@@ -10,17 +10,17 @@ workflows:
         XCODE_SCHEME: "App"
 
     scripts:
-      - name: Install Capacitor CLI and Core
+      - name: Install dependencies
         script: |
-          npm install @capacitor/core @capacitor/cli @capacitor/ios
-
-      - name: Fix permissions
-        script: |
-          chmod +x ./node_modules/.bin/cap
+          npm install
 
       - name: Create iOS Platform Folder
         script: |
           npx cap add ios || true
+
+      - name: Fix permissions
+        script: |
+          chmod +x ./node_modules/.bin/cap || true
 
       - name: Sync Capacitor Assets
         script: |
