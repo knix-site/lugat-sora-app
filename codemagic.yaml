@@ -14,13 +14,13 @@ workflows:
         script: |
           npm install @capacitor/core @capacitor/cli @capacitor/ios
 
-      - name: Create iOS Platform Folder
-        script: |
-          npx cap add ios
-
       - name: Fix permissions
         script: |
           chmod +x ./node_modules/.bin/cap
+
+      - name: Create iOS Platform Folder
+        script: |
+          npx cap add ios
 
       - name: Sync Capacitor Assets
         script: |
