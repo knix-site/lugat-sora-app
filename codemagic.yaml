@@ -20,7 +20,7 @@ workflows:
 
       - name: Create iOS Platform Folder
         script: |
-          npx cap add ios
+          npx cap add ios || true
 
       - name: Sync Capacitor Assets
         script: |
