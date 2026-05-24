@@ -1080,10 +1080,10 @@ function nextQuestion() {
 function checkAnswer() {
     if (!currentQuestionWord) return;
 
-    const ans = answerInput.value.trim().toLowerCase();
-    const correctStr = currentCorrectAnswer.toLowerCase();
-
-    const options = correctStr.split(',').map(x => x.trim());
+    const normalize = s => s.trim().toLowerCase().replace(/['''`]/g, '').replace(/\s+/g, ' ');
+    const ans = normalize(answerInput.value);
+    const correctStr = normalize(currentCorrectAnswer);
+    const options = currentCorrectAnswer.split(',').map(x => normalize(x));
     const isCorrect = options.includes(ans) || ans === correctStr;
 
     sessionTotal++;
