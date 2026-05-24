@@ -105,8 +105,12 @@ function loadFolders() {
     try {
         const raw = localStorage.getItem('lugat_folders');
         const parsed = raw ? JSON.parse(raw) : null;
-        if (Array.isArray(parsed) && parsed.every(f => f && f.id && f.name && Array.isArray(f.words))) {
-            folders = parsed;
+        if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(f => f && f.id && f.name && Array.isArray(f.words))) {
+            // Foydalanuvchi papkalarini (f_ prefiksi bo'lmagan) saqlab qolish
+            const userFolders = parsed.filter(f => !f.id.startsWith('f_'));
+            const defaults = defaultFolders();
+            // Default papkalarni yangilash, foydalanuvchi papkalarini saqlab qolish
+            folders = [...defaults, ...userFolders];
         } else {
             folders = defaultFolders();
             saveFolders();
@@ -711,7 +715,11 @@ function setupEvents() {
     btnStop.addEventListener('click', goHome);
     btnSpeak.addEventListener('click', () => { if (currentQuestionWord) speak(currentQuestionWord.english); });
 
-    const saved = localStorage.getItem('practice_dir');
+    // Eski localStorage qiymatlarini yangi formatga o'tkazish
+    let saved = localStorage.getItem('practice_dir');
+    if (saved === 'en') saved = 'en-uz';
+    if (saved === 'uz') saved = 'uz-en';
+    if (saved === 'mixed') saved = 'random';
     if (saved) { for (const r of radioDir) if (r.value === saved) r.checked = true; }
     for (const r of radioDir) {
         r.addEventListener('change', () => {
@@ -1038,19 +1046,23 @@ function nextQuestion() {
 
     currentQuestionWord = selected;
 
-    let dir = 'en';
+    let dir = 'en-uz';
     for (const r of radioDir) { if (r.checked) dir = r.value; }
 
-    if (dir === 'mixed') { dir = Math.random() < 0.5 ? 'en' : 'uz'; }
+    if (dir === 'random') { dir = Math.random() < 0.5 ? 'en-uz' : 'uz-en'; }
     currentShownLang = dir;
 
-    feedback.className = 'practice-feedback-box hidden';
+    feedback.className = 'practice-feedback hidden';
+    feedback.innerHTML = '';
     transDisplay.classList.add('hidden');
+    transDisplay.querySelector('span').textContent = '';
     answerInput.value = '';
+    answerInput.disabled = false;
+    answerInput.className = '';
     btnCheck.classList.remove('hidden');
     btnNext.classList.add('hidden');
 
-    if (currentShownLang === 'en') {
+    if (currentShownLang === 'en-uz') {
         langTag.textContent = 'Inglizcha so\'z:';
         wordText.textContent = currentQuestionWord.english;
         currentCorrectAnswer = currentQuestionWord.uzbek;
@@ -1083,23 +1095,30 @@ function checkAnswer() {
         currentQuestionWord.correctAttempts = (currentQuestionWord.correctAttempts || 0) + 1;
         if (currentQuestionWord.weight > 1) currentQuestionWord.weight--;
 
-        feedback.textContent = "To'g'ri! Barakalla! 🎉";
-        feedback.className = 'practice-feedback-box correct';
+        answerInput.className = 'success-input';
+        feedback.innerHTML = `<h5>✓ TO'G'RI!</h5><p>Javobingiz: ${esc(answerInput.value)}</p>`;
+        feedback.className = 'practice-feedback success';
     } else {
         currentQuestionWord.weight = (currentQuestionWord.weight || 1) + 2;
 
-        feedback.textContent = `Noto'g'ri. To'g'ri javob: ${currentCorrectAnswer}`;
-        feedback.className = 'practice-feedback-box incorrect';
+        answerInput.className = 'error-input';
+        feedback.innerHTML = `<h5>✗ NOTO'G'RI</h5><p>Siz: <s>${esc(answerInput.value)}</s> → To'g'ri: <strong>${esc(currentCorrectAnswer)}</strong></p>`;
+        feedback.className = 'practice-feedback error';
     }
+
+    // Tarjimasini ko'rsatish
+    transDisplay.querySelector('span').textContent = currentCorrectAnswer;
+    transDisplay.classList.remove('hidden');
 
     saveFolders();
     updateStats();
 
+    answerInput.disabled = true;
     btnCheck.classList.add('hidden');
     btnNext.classList.remove('hidden');
     btnNext.focus();
 
-    if (currentShownLang === 'uz') {
+    if (currentShownLang === 'uz-en') {
         speak(currentQuestionWord.english);
     }
 }
@@ -1145,6 +1164,6 @@ function speak(text) {
 function showToast(msg, type = 'success') {
     if (!toast) return;
     toast.textContent = msg;
-    toast.className = `global-toast show ${type}`;
-    setTimeout(() => toast.classList.remove('show'), 3000);
+    toast.className = `toast-feedback ${type} show`;
+    setTimeout(() => { toast.className = 'toast-feedback hidden'; }, 3000);
 }
