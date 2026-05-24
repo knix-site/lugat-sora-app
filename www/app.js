@@ -1083,12 +1083,14 @@ function checkAnswer() {
     const ans = answerInput.value.trim().toLowerCase();
     const correctStr = currentCorrectAnswer.toLowerCase();
 
-    // Ko'p variantli tarjimalarni ham tekshirish (vergul bilan ajratilgan bo'lsa)
     const options = correctStr.split(',').map(x => x.trim());
     const isCorrect = options.includes(ans) || ans === correctStr;
 
     sessionTotal++;
     currentQuestionWord.totalAttempts = (currentQuestionWord.totalAttempts || 0) + 1;
+
+    // Tekshirish bosilgan zahoti o'qib berish
+    speak(currentQuestionWord.english);
 
     if (isCorrect) {
         sessionCorrect++;
@@ -1096,19 +1098,17 @@ function checkAnswer() {
         if (currentQuestionWord.weight > 1) currentQuestionWord.weight--;
 
         answerInput.className = 'success-input';
-        feedback.innerHTML = `<h5>✓ TO'G'RI!</h5><p>Javobingiz: ${esc(answerInput.value)}</p>`;
+        feedback.innerHTML = '<h5>\u2713 TO\'G\'RI!</h5><p>Sizning javob: <strong>' + esc(answerInput.value) + '</strong></p><p class="feedback-correct-answer">Asl tarjima: <strong>' + esc(currentCorrectAnswer) + '</strong></p>';
         feedback.className = 'practice-feedback success';
     } else {
         currentQuestionWord.weight = (currentQuestionWord.weight || 1) + 2;
 
         answerInput.className = 'error-input';
-        feedback.innerHTML = `<h5>✗ NOTO'G'RI</h5><p>Siz: <s>${esc(answerInput.value)}</s> → To'g'ri: <strong>${esc(currentCorrectAnswer)}</strong></p>`;
+        feedback.innerHTML = '<h5>\u2717 NOTO\'G\'RI</h5><p>Sizning javob: <s>' + esc(answerInput.value) + '</s></p><p class="feedback-correct-answer">Asl tarjima: <strong>' + esc(currentCorrectAnswer) + '</strong></p>';
         feedback.className = 'practice-feedback error';
     }
 
-    // Tarjimasini ko'rsatish
-    transDisplay.querySelector('span').textContent = currentCorrectAnswer;
-    transDisplay.classList.remove('hidden');
+    transDisplay.classList.add('hidden');
 
     saveFolders();
     updateStats();
@@ -1117,10 +1117,6 @@ function checkAnswer() {
     btnCheck.classList.add('hidden');
     btnNext.classList.remove('hidden');
     btnNext.focus();
-
-    if (currentShownLang === 'uz-en') {
-        speak(currentQuestionWord.english);
-    }
 }
 
 function updateStats() {
