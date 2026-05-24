@@ -18,6 +18,10 @@ workflows:
         script: |
           npm run build || true
 
+      - name: Fix permissions
+        script: |
+          chmod +x ./node_modules/.bin/cap
+
       - name: Sync Capacitor
         script: |
           npx cap sync ios
