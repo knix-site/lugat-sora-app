@@ -1,5 +1,6 @@
 {
-  "appId": "com.lugatsora.app",
-  "appName": "lugat-so'ra-app",
-  "webDir": "www"
+  "appId": "com.example.app",
+  "appName": "lugat-sora-app",
+  "webDir": ".",
+  "bundledWebRuntime": false
 }
