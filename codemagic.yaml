@@ -18,6 +18,10 @@ workflows:
         script: |
           npm run build || true
 
+      - name: Create iOS Platform
+        script: |
+          npx cap add ios || true
+
       - name: Fix permissions
         script: |
           chmod +x ./node_modules/.bin/cap
