@@ -1137,16 +1137,235 @@ function uid(prefix = 'w') {
 }
 
 function phonetic(word) {
-    // Oddiy taqlidiy transkripsiya generatori (Faqat vizual ko'rinish uchun)
     if (!word) return '';
-    return word.toLowerCase()
-        .replace(/apple/g, 'æpl')
-        .replace(/th/g, 'θ')
-        .replace(/ee/g, 'i:')
-        .replace(/oo/g, 'u:')
-        .replace(/c/g, 'k')
+
+    // Lug'at: eng ko'p ishlatiladigan so'zlar uchun aniq IPA transkripsiyasi
+    const dict = {
+        // Meva va sabzavotlar
+        'apple': 'ˈæpl', 'banana': 'bəˈnɑːnə', 'orange': 'ˈɒrɪndʒ', 'grape': 'ɡreɪp',
+        'strawberry': 'ˈstrɔːbəri', 'watermelon': 'ˈwɔːtəmelən', 'melon': 'ˈmelən',
+        'peach': 'piːtʃ', 'cherry': 'ˈtʃeri', 'pear': 'peər', 'plum': 'plʌm',
+        'lemon': 'ˈlemən', 'pomegranate': 'ˈpɒmɪɡrænɪt', 'fig': 'fɪɡ',
+        'apricot': 'ˈeɪprɪkɒt', 'mango': 'ˈmæŋɡəʊ', 'pineapple': 'ˈpaɪnæpl',
+        'coconut': 'ˈkəʊkənʌt', 'tomato': 'təˈmɑːtəʊ', 'potato': 'pəˈteɪtəʊ',
+        'onion': 'ˈʌnjən', 'garlic': 'ˈɡɑːlɪk', 'carrot': 'ˈkærət',
+        'cucumber': 'ˈkjuːkʌmbər', 'pepper': 'ˈpepər', 'eggplant': 'ˈeɡplɑːnt',
+        'cabbage': 'ˈkæbɪdʒ', 'spinach': 'ˈspɪnɪtʃ', 'corn': 'kɔːn',
+        'pumpkin': 'ˈpʌmpkɪn', 'radish': 'ˈrædɪʃ', 'beet': 'biːt',
+        'celery': 'ˈseləri', 'lettuce': 'ˈletɪs', 'mushroom': 'ˈmʌʃruːm',
+        // Hayvonlar
+        'cat': 'kæt', 'dog': 'dɒɡ', 'horse': 'hɔːs', 'cow': 'kaʊ',
+        'sheep': 'ʃiːp', 'goat': 'ɡəʊt', 'pig': 'pɪɡ', 'chicken': 'ˈtʃɪkɪn',
+        'duck': 'dʌk', 'rabbit': 'ˈræbɪt', 'lion': 'ˈlaɪən', 'tiger': 'ˈtaɪɡər',
+        'elephant': 'ˈelɪfənt', 'bear': 'beər', 'wolf': 'wʊlf', 'fox': 'fɒks',
+        'monkey': 'ˈmʌŋki', 'giraffe': 'dʒɪˈrɑːf', 'zebra': 'ˈziːbrə',
+        'camel': 'ˈkæməl', 'snake': 'sneɪk', 'eagle': 'ˈiːɡl',
+        'parrot': 'ˈpærət', 'fish': 'fɪʃ', 'dolphin': 'ˈdɒlfɪn',
+        'whale': 'weɪl', 'shark': 'ʃɑːk', 'butterfly': 'ˈbʌtəflaɪ',
+        'bee': 'biː', 'ant': 'ænt', 'spider': 'ˈspaɪdər', 'frog': 'frɒɡ',
+        'turtle': 'ˈtɜːtl', 'bird': 'bɜːd', 'deer': 'dɪər',
+        // Oila
+        'mother': 'ˈmʌðər', 'father': 'ˈfɑːðər', 'sister': 'ˈsɪstər',
+        'brother': 'ˈbrʌðər', 'son': 'sʌn', 'daughter': 'ˈdɔːtər',
+        'grandmother': 'ˈɡrænmʌðər', 'grandfather': 'ˈɡrænfɑːðər',
+        'uncle': 'ˈʌŋkl', 'aunt': 'ɑːnt', 'cousin': 'ˈkʌzn',
+        'husband': 'ˈhʌzbənd', 'wife': 'waɪf', 'baby': 'ˈbeɪbi',
+        'child': 'tʃaɪld', 'friend': 'frend', 'teacher': 'ˈtiːtʃər',
+        'doctor': 'ˈdɒktər', 'student': 'ˈstjuːdənt', 'neighbor': 'ˈneɪbər',
+        // Tana qismlari
+        'head': 'hed', 'eye': 'aɪ', 'ear': 'ɪər', 'nose': 'nəʊz',
+        'mouth': 'maʊθ', 'tooth': 'tuːθ', 'tongue': 'tʌŋ', 'neck': 'nek',
+        'shoulder': 'ˈʃəʊldər', 'arm': 'ɑːm', 'hand': 'hænd',
+        'finger': 'ˈfɪŋɡər', 'chest': 'tʃest', 'back': 'bæk',
+        'leg': 'leɡ', 'foot': 'fʊt', 'knee': 'niː', 'hair': 'heər',
+        'heart': 'hɑːt', 'stomach': 'ˈstʌmək',
+        // Ranglar
+        'red': 'red', 'blue': 'bluː', 'green': 'ɡriːn', 'yellow': 'ˈjeləʊ',
+        'black': 'blæk', 'white': 'waɪt', 'purple': 'ˈpɜːpl',
+        'pink': 'pɪŋk', 'brown': 'braʊn', 'grey': 'ɡreɪ', 'gold': 'ɡəʊld',
+        'silver': 'ˈsɪlvər',
+        // Kundalik fe'llar
+        'eat': 'iːt', 'drink': 'drɪŋk', 'sleep': 'sliːp', 'walk': 'wɔːk',
+        'run': 'rʌn', 'jump': 'dʒʌmp', 'sit': 'sɪt', 'stand': 'stænd',
+        'read': 'riːd', 'write': 'raɪt', 'speak': 'spiːk', 'listen': 'ˈlɪsn',
+        'watch': 'wɒtʃ', 'play': 'pleɪ', 'work': 'wɜːk', 'study': 'ˈstʌdi',
+        'learn': 'lɜːn', 'teach': 'tiːtʃ', 'help': 'help', 'love': 'lʌv',
+        'like': 'laɪk', 'want': 'wɒnt', 'need': 'niːd', 'know': 'nəʊ',
+        'think': 'θɪŋk', 'see': 'siː', 'hear': 'hɪər', 'feel': 'fiːl',
+        'give': 'ɡɪv', 'take': 'teɪk', 'make': 'meɪk', 'come': 'kʌm',
+        'go': 'ɡəʊ', 'get': 'ɡet', 'put': 'pʊt', 'use': 'juːz',
+        'find': 'faɪnd', 'tell': 'tel', 'ask': 'ɑːsk', 'call': 'kɔːl',
+        'try': 'traɪ', 'keep': 'kiːp', 'let': 'let', 'begin': 'bɪˈɡɪn',
+        'show': 'ʃəʊ', 'hear': 'hɪər', 'open': 'ˈəʊpən', 'close': 'kləʊz',
+        'buy': 'baɪ', 'sell': 'sel', 'pay': 'peɪ', 'send': 'send',
+        'bring': 'brɪŋ', 'leave': 'liːv', 'move': 'muːv', 'live': 'lɪv',
+        'stop': 'stɒp', 'start': 'stɑːt', 'wait': 'weɪt', 'turn': 'tɜːn',
+        'meet': 'miːt', 'grow': 'ɡrəʊ', 'cut': 'kʌt', 'carry': 'ˈkæri',
+        // Sifatlar
+        'big': 'bɪɡ', 'small': 'smɔːl', 'large': 'lɑːdʒ', 'little': 'ˈlɪtl',
+        'long': 'lɒŋ', 'short': 'ʃɔːt', 'tall': 'tɔːl', 'wide': 'waɪd',
+        'narrow': 'ˈnærəʊ', 'deep': 'diːp', 'high': 'haɪ', 'low': 'ləʊ',
+        'fast': 'fɑːst', 'slow': 'sləʊ', 'hot': 'hɒt', 'cold': 'kəʊld',
+        'warm': 'wɔːm', 'cool': 'kuːl', 'good': 'ɡʊd', 'bad': 'bæd',
+        'new': 'njuː', 'old': 'əʊld', 'young': 'jʌŋ', 'hard': 'hɑːd',
+        'soft': 'sɒft', 'easy': 'ˈiːzi', 'difficult': 'ˈdɪfɪklt',
+        'beautiful': 'ˈbjuːtɪfl', 'ugly': 'ˈʌɡli', 'clean': 'kliːn',
+        'dirty': 'ˈdɜːti', 'happy': 'ˈhæpi', 'sad': 'sæd', 'angry': 'ˈæŋɡri',
+        'tired': 'ˈtaɪəd', 'hungry': 'ˈhʌŋɡri', 'thirsty': 'ˈθɜːsti',
+        'sick': 'sɪk', 'healthy': 'ˈhelθi', 'strong': 'strɒŋ', 'weak': 'wiːk',
+        'rich': 'rɪtʃ', 'poor': 'pʊər', 'free': 'friː', 'busy': 'ˈbɪzi',
+        'ready': 'ˈredi', 'right': 'raɪt', 'wrong': 'rɒŋ', 'true': 'truː',
+        'false': 'fɔːls', 'full': 'fʊl', 'empty': 'ˈempti', 'open': 'ˈəʊpən',
+        'closed': 'kləʊzd', 'safe': 'seɪf', 'dangerous': 'ˈdeɪndʒərəs',
+        'important': 'ɪmˈpɔːtənt', 'interesting': 'ˈɪntrəstɪŋ',
+        'boring': 'ˈbɔːrɪŋ', 'funny': 'ˈfʌni', 'serious': 'ˈsɪəriəs',
+        'simple': 'ˈsɪmpl', 'strange': 'streɪndʒ', 'clear': 'klɪər',
+        // Raqamlar
+        'zero': 'ˈzɪərəʊ', 'one': 'wʌn', 'two': 'tuː', 'three': 'θriː',
+        'four': 'fɔːr', 'five': 'faɪv', 'six': 'sɪks', 'seven': 'ˈsevn',
+        'eight': 'eɪt', 'nine': 'naɪn', 'ten': 'ten', 'eleven': 'ɪˈlevn',
+        'twelve': 'twelv', 'thirteen': 'θɜːˈtiːn', 'fourteen': 'fɔːˈtiːn',
+        'fifteen': 'fɪfˈtiːn', 'sixteen': 'sɪksˈtiːn', 'seventeen': 'ˈsevntiːn',
+        'eighteen': 'eɪˈtiːn', 'nineteen': 'naɪnˈtiːn', 'twenty': 'ˈtwenti',
+        'thirty': 'ˈθɜːti', 'forty': 'ˈfɔːti', 'fifty': 'ˈfɪfti',
+        'sixty': 'ˈsɪksti', 'seventy': 'ˈsevnti', 'eighty': 'ˈeɪti',
+        'ninety': 'ˈnaɪnti', 'hundred': 'ˈhʌndrəd', 'thousand': 'ˈθaʊznd',
+        'million': 'ˈmɪljən',
+        // Uy va buyumlar
+        'house': 'haʊs', 'home': 'həʊm', 'room': 'ruːm', 'door': 'dɔːr',
+        'window': 'ˈwɪndəʊ', 'floor': 'flɔːr', 'wall': 'wɔːl', 'roof': 'ruːf',
+        'table': 'ˈteɪbl', 'chair': 'tʃeər', 'bed': 'bed', 'sofa': 'ˈsəʊfə',
+        'kitchen': 'ˈkɪtʃɪn', 'bathroom': 'ˈbɑːθruːm', 'garden': 'ˈɡɑːdn',
+        'book': 'bʊk', 'pen': 'pen', 'pencil': 'ˈpensl', 'paper': 'ˈpeɪpər',
+        'phone': 'fəʊn', 'computer': 'kəmˈpjuːtər', 'television': 'ˈtelɪvɪʒn',
+        'radio': 'ˈreɪdiəʊ', 'clock': 'klɒk', 'watch': 'wɒtʃ',
+        'key': 'kiː', 'money': 'ˈmʌni', 'bag': 'bæɡ', 'bottle': 'ˈbɒtl',
+        'glass': 'ɡlɑːs', 'cup': 'kʌp', 'plate': 'pleɪt', 'knife': 'naɪf',
+        'fork': 'fɔːk', 'spoon': 'spuːn', 'mirror': 'ˈmɪrər', 'lamp': 'læmp',
+        // Kiyim-kechak
+        'shirt': 'ʃɜːt', 'trousers': 'ˈtraʊzəz', 'dress': 'dres',
+        'skirt': 'skɜːt', 'jacket': 'ˈdʒækɪt', 'coat': 'kəʊt',
+        'shoes': 'ʃuːz', 'boots': 'buːts', 'socks': 'sɒks', 'hat': 'hæt',
+        'gloves': 'ɡlʌvz', 'scarf': 'skɑːf', 'tie': 'taɪ',
+        // Tabiat
+        'sun': 'sʌn', 'moon': 'muːn', 'star': 'stɑːr', 'sky': 'skaɪ',
+        'cloud': 'klaʊd', 'rain': 'reɪn', 'snow': 'snəʊ', 'wind': 'wɪnd',
+        'storm': 'stɔːm', 'thunder': 'ˈθʌndər', 'lightning': 'ˈlaɪtnɪŋ',
+        'mountain': 'ˈmaʊntɪn', 'river': 'ˈrɪvər', 'sea': 'siː',
+        'ocean': 'ˈəʊʃn', 'lake': 'leɪk', 'forest': 'ˈfɒrɪst',
+        'desert': 'ˈdezət', 'island': 'ˈaɪlənd', 'beach': 'biːtʃ',
+        'stone': 'stəʊn', 'sand': 'sænd', 'grass': 'ɡrɑːs', 'tree': 'triː',
+        'flower': 'ˈflaʊər', 'leaf': 'liːf', 'seed': 'siːd', 'root': 'ruːt',
+        'fire': 'faɪər', 'water': 'ˈwɔːtər', 'air': 'eər', 'earth': 'ɜːθ',
+        'ice': 'aɪs', 'steam': 'stiːm', 'smoke': 'sməʊk', 'dust': 'dʌst',
+        // Transport
+        'car': 'kɑːr', 'bus': 'bʌs', 'train': 'treɪn', 'plane': 'pleɪn',
+        'ship': 'ʃɪp', 'boat': 'bəʊt', 'bicycle': 'ˈbaɪsɪkl',
+        'motorcycle': 'ˈməʊtəsaɪkl', 'truck': 'trʌk', 'taxi': 'ˈtæksi',
+        'road': 'rəʊd', 'street': 'striːt', 'bridge': 'brɪdʒ',
+        // Ovqat va ichimlik
+        'bread': 'bred', 'rice': 'raɪs', 'meat': 'miːt', 'egg': 'eɡ',
+        'milk': 'mɪlk', 'butter': 'ˈbʌtər', 'cheese': 'tʃiːz',
+        'sugar': 'ˈʃʊɡər', 'salt': 'sɔːlt', 'oil': 'ɔɪl', 'soup': 'suːp',
+        'coffee': 'ˈkɒfi', 'tea': 'tiː', 'juice': 'dʒuːs',
+        // Ish va kasb
+        'job': 'dʒɒb', 'work': 'wɜːk', 'office': 'ˈɒfɪs',
+        'school': 'skuːl', 'hospital': 'ˈhɒspɪtl', 'shop': 'ʃɒp',
+        'market': 'ˈmɑːkɪt', 'bank': 'bæŋk', 'hotel': 'həʊˈtel',
+        'restaurant': 'ˈrestrɒnt', 'police': 'pəˈliːs', 'army': 'ˈɑːmi',
+        'lawyer': 'ˈlɔːjər', 'engineer': 'ˌendʒɪˈnɪər', 'farmer': 'ˈfɑːmər',
+        'soldier': 'ˈsəʊldʒər', 'driver': 'ˈdraɪvər', 'pilot': 'ˈpaɪlət',
+        'nurse': 'nɜːs', 'chef': 'ʃef', 'artist': 'ˈɑːtɪst',
+        // Sana va vaqt
+        'day': 'deɪ', 'night': 'naɪt', 'morning': 'ˈmɔːnɪŋ',
+        'afternoon': 'ˌɑːftəˈnuːn', 'evening': 'ˈiːvnɪŋ',
+        'week': 'wiːk', 'month': 'mʌnθ', 'year': 'jɪər',
+        'today': 'təˈdeɪ', 'tomorrow': 'təˈmɒrəʊ', 'yesterday': 'ˈjestədeɪ',
+        'hour': 'aʊər', 'minute': 'ˈmɪnɪt', 'second': 'ˈsekənd',
+        'monday': 'ˈmʌndeɪ', 'tuesday': 'ˈtjuːzdeɪ', 'wednesday': 'ˈwenzdeɪ',
+        'thursday': 'ˈθɜːzdeɪ', 'friday': 'ˈfraɪdeɪ', 'saturday': 'ˈsætədeɪ',
+        'sunday': 'ˈsʌndeɪ', 'january': 'ˈdʒænjuəri', 'february': 'ˈfebruəri',
+        'march': 'mɑːtʃ', 'april': 'ˈeɪprəl', 'may': 'meɪ', 'june': 'dʒuːn',
+        'july': 'dʒuˈlaɪ', 'august': 'ˈɔːɡəst', 'september': 'sepˈtembər',
+        'october': 'ɒkˈtəʊbər', 'november': 'nəʊˈvembər', 'december': 'dɪˈsembər',
+        // Ko'p ishlatiladigan so'zlar
+        'hello': 'həˈləʊ', 'goodbye': 'ˌɡʊdˈbaɪ', 'please': 'pliːz',
+        'thank': 'θæŋk', 'thanks': 'θæŋks', 'sorry': 'ˈsɒri', 'yes': 'jes',
+        'no': 'nəʊ', 'maybe': 'ˈmeɪbi', 'here': 'hɪər', 'there': 'ðeər',
+        'this': 'ðɪs', 'that': 'ðæt', 'what': 'wɒt', 'where': 'weər',
+        'when': 'wen', 'who': 'huː', 'why': 'waɪ', 'how': 'haʊ',
+        'which': 'wɪtʃ', 'some': 'sʌm', 'any': 'ˈeni', 'every': 'ˈevri',
+        'all': 'ɔːl', 'many': 'ˈmeni', 'much': 'mʌtʃ', 'more': 'mɔːr',
+        'most': 'məʊst', 'other': 'ˈʌðər', 'same': 'seɪm', 'different': 'ˈdɪfrənt',
+        'very': 'ˈveri', 'too': 'tuː', 'also': 'ˈɔːlsəʊ', 'just': 'dʒʌst',
+        'only': 'ˈəʊnli', 'still': 'stɪl', 'always': 'ˈɔːlweɪz',
+        'never': 'ˈnevər', 'often': 'ˈɒfn', 'sometimes': 'ˈsʌmtaɪmz',
+        'again': 'əˈɡen', 'together': 'təˈɡeðər', 'between': 'bɪˈtwiːn',
+        'life': 'laɪf', 'world': 'wɜːld', 'people': 'ˈpiːpl', 'man': 'mæn',
+        'woman': 'ˈwʊmən', 'boy': 'bɔɪ', 'girl': 'ɡɜːl', 'name': 'neɪm',
+        'time': 'taɪm', 'place': 'pleɪs', 'city': 'ˈsɪti', 'country': 'ˈkʌntri',
+        'language': 'ˈlæŋɡwɪdʒ', 'word': 'wɜːd', 'sentence': 'ˈsentəns',
+        'story': 'ˈstɔːri', 'news': 'njuːz', 'idea': 'aɪˈdɪə',
+        'question': 'ˈkwestʃən', 'answer': 'ˈɑːnsər', 'problem': 'ˈprɒbləm',
+        'example': 'ɪɡˈzɑːmpl', 'color': 'ˈkʌlər', 'size': 'saɪz',
+        'number': 'ˈnʌmbər', 'price': 'praɪs', 'hour': 'aʊər',
+        'information': 'ˌɪnfəˈmeɪʃn', 'education': 'ˌedʒuˈkeɪʃn',
+        'health': 'helθ', 'sport': 'spɔːt', 'music': 'ˈmjuːzɪk',
+        'film': 'fɪlm', 'game': 'ɡeɪm', 'science': 'ˈsaɪəns',
+        'nature': 'ˈneɪtʃər', 'history': 'ˈhɪstri', 'future': 'ˈfjuːtʃər',
+        'war': 'wɔːr', 'peace': 'piːs', 'power': 'ˈpaʊər', 'love': 'lʌv',
+        'dream': 'driːm', 'hope': 'həʊp', 'fear': 'fɪər', 'truth': 'truːθ',
+        'beautiful': 'ˈbjuːtɪfl', 'together': 'təˈɡeðər',
+        'understand': 'ˌʌndəˈstænd', 'remember': 'rɪˈmembər',
+        'forget': 'fəˈɡet', 'believe': 'bɪˈliːv', 'decide': 'dɪˈsaɪd',
+        'happen': 'ˈhæpən', 'change': 'tʃeɪndʒ', 'create': 'kriˈeɪt',
+        'choose': 'tʃuːz', 'enjoy': 'ɪnˈdʒɔɪ', 'agree': 'əˈɡriː',
+        'travel': 'ˈtrævl', 'visit': 'ˈvɪzɪt', 'return': 'rɪˈtɜːn',
+        'smile': 'smaɪl', 'laugh': 'lɑːf', 'cry': 'kraɪ', 'sing': 'sɪŋ',
+        'dance': 'dɑːns', 'cook': 'kʊk', 'clean': 'kliːn', 'build': 'bɪld',
+        'draw': 'drɔː', 'paint': 'peɪnt', 'repair': 'rɪˈpeər',
+    };
+
+    const lower = word.toLowerCase().trim();
+    if (dict[lower]) return dict[lower];
+
+    // Lug'atda yo'q so'zlar uchun yaxshilangan qoidalar
+    return lower
+        .replace(/tion$/g, 'ʃn')
+        .replace(/sion$/g, 'ʒn')
+        .replace(/ture$/g, 'tʃər')
+        .replace(/ough/g, 'əʊ')
+        .replace(/aught/g, 'ɔːt')
+        .replace(/ought/g, 'ɔːt')
+        .replace(/ight/g, 'aɪt')
+        .replace(/igh/g, 'aɪ')
+        .replace(/tch/g, 'tʃ')
+        .replace(/dge/g, 'dʒ')
+        .replace(/ph/g, 'f')
+        .replace(/wh/g, 'w')
+        .replace(/wr/g, 'r')
+        .replace(/kn/g, 'n')
+        .replace(/gn/g, 'n')
+        .replace(/mb$/g, 'm')
+        .replace(/ng/g, 'ŋ')
+        .replace(/nk/g, 'ŋk')
+        .replace(/ch/g, 'tʃ')
         .replace(/sh/g, 'ʃ')
-        .replace(/tion/g, 'ʃn');
+        .replace(/th/g, 'θ')
+        .replace(/([aeiou])r\b/g, 'ər')
+        .replace(/ee/g, 'iː')
+        .replace(/oo/g, 'uː')
+        .replace(/ea/g, 'iː')
+        .replace(/ai|ay/g, 'eɪ')
+        .replace(/oa/g, 'əʊ')
+        .replace(/oi|oy/g, 'ɔɪ')
+        .replace(/ou|ow/g, 'aʊ')
+        .replace(/ie/g, 'aɪ')
+        .replace(/a_e/g, 'eɪ')
+        .replace(/\bce\b|\bci\b/g, 's')
+        .replace(/[aeiou]$/g, match => match === 'e' ? '' : match)
+        .replace(/a\b/g, 'ə')
+        .replace(/ə([^aeiouəɪʊɜæɒʌ])/g, 'ə$1');
 }
 
 function speak(text) {

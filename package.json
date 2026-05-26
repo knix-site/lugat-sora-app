@@ -11,5 +11,17 @@
     "@capacitor/core": "^5.0.0",
     "@capacitor/ios": "^5.0.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knix-site/lugat-sora-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/knix-site/lugat-sora-app/issues"
+  },
+  "homepage": "https://github.com/knix-site/lugat-sora-app#readme"
 }

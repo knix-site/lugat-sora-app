@@ -1,4 +1,4 @@
-const cacheName = 'lugat-v9';
+const cacheName = 'lugat-v19';
 const assets = [
   '/',
   '/index.html',
